@@ -47,6 +47,14 @@ Class coffeediz_git extends CModule
             $_SERVER["DOCUMENT_ROOT"]."/bitrix/modules/".$this->MODULE_ID."/install/components",
             $_SERVER["DOCUMENT_ROOT"]."/bitrix/components/", true, true
         );
+        CopyDirFiles(
+			$_SERVER["DOCUMENT_ROOT"]."/bitrix/modules/".$this->MODULE_ID."/install/admin/coffeediz_git.php",
+            $_SERVER["DOCUMENT_ROOT"]."/bitrix/admin/coffeediz_git.php", true, true
+        );
+		CopyDirFiles(
+			$_SERVER["DOCUMENT_ROOT"]."/bitrix/modules/".$this->MODULE_ID."/install/themes", 
+			$_SERVER["DOCUMENT_ROOT"]."/bitrix/themes", true, true
+		);
 		return true;
 	}
 	function InstallPublic()
@@ -54,9 +62,10 @@ Class coffeediz_git extends CModule
 	}
 	function UnInstallFiles()
 	{
-        DeleteDirFilesEx(
-            $_SERVER["DOCUMENT_ROOT"]."/bitrix/components/".$this->MODULE_ID."/"
-        );
+        DeleteDirFilesEx($_SERVER["DOCUMENT_ROOT"]."/bitrix/components/".$this->MODULE_ID."/");
+        DeleteDirFilesEx($_SERVER["DOCUMENT_ROOT"]."/bitrix/admin/coffeediz_git.php");
+		DeleteDirFilesEx($_SERVER["DOCUMENT_ROOT"].'/bitrix/themes/.default/icons/coffeediz.git/');
+        DeleteDirFilesEx($_SERVER["DOCUMENT_ROOT"].'/bitrix/themes/.default/coffeediz.git.css');
 		return true;
 	}
 	function DoInstall()

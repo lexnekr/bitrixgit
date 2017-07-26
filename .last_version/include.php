@@ -840,4 +840,5 @@ class GitRepo {
     }
 }
 /* End of file */
+
 ?>

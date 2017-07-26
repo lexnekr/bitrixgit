@@ -1,0 +1,8 @@
+/*Menu icon*/
+.coffeediz_git_menu_icon {
+    background-image:url('icons/coffeediz.git/admin-menu-icon.png');
+    background-position: 9px 4px;
+}
+#coffeediz_git_menu_icon {
+    background-image:url('icons/coffeediz.git/admin-menu-icon.png');
+}
